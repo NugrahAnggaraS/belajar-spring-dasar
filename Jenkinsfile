@@ -14,7 +14,7 @@ pipeline {
 
         stage('Print'){
             steps {
-                sh 'cat "Cihuy"'
+                sh 'echo "Cihuy"'
             }
         }
     }
