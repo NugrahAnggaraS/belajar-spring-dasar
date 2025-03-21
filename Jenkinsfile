@@ -1,18 +1,21 @@
 pipeline{
     agent any
     stages{
-        stage('test'){
+        stage('Checkout'){
             step{
-                sh "./mvnw test"
+                git branch: 'main',url: 'https://github.com/NugrahAnggaraS/belajar-spring-dasar.git'
+            }
+        }  
+
+        stage('Build'){
+            step{
+                sh 'mvn clean package'
             }
         }
 
-        stage('build'){
-            step{
-                sh "./mvnw compile"
-            }
-            step{
-                sh "./mvnw test-compile"
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
         }
     }
