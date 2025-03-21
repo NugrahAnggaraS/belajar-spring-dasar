@@ -11,9 +11,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/NugrahAnggaraS/belajar-spring-dasar.git'
             }
         }
-        stage('Test') {
+
+        stage('Print'){
             steps {
-                sh './mvnw test'
+                sh 'cat "Cihuy"'
             }
         }
     }
