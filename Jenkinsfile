@@ -2,13 +2,13 @@ pipeline{
     agent any
     stages{
         stage('Checkout'){
-            step{
+            steps{
                 git branch: 'main',url: 'https://github.com/NugrahAnggaraS/belajar-spring-dasar.git'
             }
         }  
 
         stage('Build'){
-            step{
+            steps{
                 sh 'mvn clean package'
             }
         }
