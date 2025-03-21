@@ -1,14 +1,19 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Checkout'){
-            steps{
-                git branch: 'main',url: 'https://github.com/NugrahAnggaraS/belajar-spring-dasar.git'
+    stages {
+        stage('Debug') {
+            steps {
+                sh 'echo "Pipeline Running Successfully"'
             }
-        }  
+        }
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/NugrahAnggaraS/belajar-spring-dasar.git'
+            }
+        }
 
-        stage('Build'){
-            steps{
+        stage('Build') {
+            steps {
                 sh 'mvn clean package'
             }
         }
